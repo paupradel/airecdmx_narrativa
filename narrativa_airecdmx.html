@@ -3,24 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Narrativa visual del pronóstico de calidad del aire en la ciudad de méxico">
-    <meta name="keywords", content="cdmx, contaminación, pronóstico, conacyt"
+    <meta name="keywords" content="cdmx, contaminación, pronóstico, conacyt">
     <meta name="author" content="pradel">
     <title>Pronosticar la calidad del aire en el Valle de México</title>
 
     <style>
         body {
             margin:0;
-            font-family: "Avenir LT Std 55 Roman";
+            font-family: "Avenir Light";
             font-size: 15px;
             background-image: url("/assets/background.png");
-            background-postition: center center;
+            background-position: center center;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-size: cover;
         }
     </style>
+
+    <link rel="stylesheet" href="/narrativa.css">
+
+    <title>Pronosticando la calidad del aire en el Valle de México</title>
 </head>
 <body>
+    <!--Definir diapositivas -->
+    <div id="movie" data-movie data-trigger_position="0.7">
+        <div id="movie_1" data-parse="#text_1, #show_c1, #hide_not_c1"></div>
+        <div id="movie_2" data-parse="#text_2, #show_c2, #hide_not_c2"></div>
+        <div id="movie_3" data-parse="#text_3, #show_c3, #hide_not_c3"></div>
+        <div id="movie_4" data-parse="#text_4, #show_c4, #hide_not_c4"></div>
+    </div>
+
+    <!--Definir los textos-->
+    <a id="text_1" data-control_element="#caption" data-element_text="La calidad del aire en el Valle de México es una
+                                                                      constante preocupación para la salud pública para
+                                                                      los habitantes y un reto para las autoridades. En
+                                                                      1992, fue declarada como la ciudad con el aire más
+                                                                      contaminado del planeta. Desde entonces, la
+                                                                      contaminación ha disminuido gradualmente, pero las
+                                                                      amenazas inminentes a la salud pública continúan
+                                                                      existiendo.
+                                                                      La Zona Metropolitana del Valle de México es una de
+                                                                      las urbes más grandes del planeta. En ella viven
+                                                                      cerca de 21 millón de personas, a 2,240 metros sobre
+                                                                      el nivel del mar, en una cuenca rodeada de sierras
+                                                                      y volcanes que alcanzan los 5,400 metros, en el
+                                                                      oriente (Popocatépetl e Iztaccíhuatl), sur y
+                                                                      poniente (Sierra de Ajusco-Chichinauhtzin)."></a>
+    <a id="text_2" data-control_element="#caption" data-element_text="Esta geografía particular actúa directamente como
+                                                                      una barrera para la liberación y circulación de los
+                                                                      vientos y la dispersión de los contaminantes. Se
+                                                                      calcula que en la Zona Metroolitana del Valle de
+                                                                      México, la población esta expuesta a un promedio
+                                                                      diario de 63μg/m3 de PM10, las cuales son partículas
+                                                                      sólidas menores a 10 picómetros en la forma de ceniza,
+                                                                      hollín, cemento o polen."></a>
+    <a id="text_3" data-control_element="#caption" data-element_text="La exposición a partículas menores a 2.5 picómetros,
+                                                                      PM2.5, incluso a niveles por debajo de las normas
+                                                                      internacionales y nacionales, se asocian con un
+                                                                      incremento en la incidencia de asma, severidad en el
+                                                                      deterioro de la función pulmonar, así como mayor
+                                                                      gravedad en la presentación de las enfermedades
+                                                                      respiratorias de niños y adolescentes (Romero et al.,
+                                                                      2006; Querol, 2008)."></a>
+    <a id="text_4" data-control_element="#caption" data-element_text="En la zona sur de la ciudad se puede llegar hasta
+                                                                      45μg/m3 de ozono, el cual es un contaminante que
+                                                                      se forma por reacciones fotoquímicas con contaminantes
+                                                                      primarios como los Óxidos de Nitrógeno (NOX) y los
+                                                                      componentes orgánicos volátiles. Estudios han
+                                                                      mostrado que los bajos niveles de oxígeno a grandes
+                                                                      altitudes disminuyen la eficiencia de los combustibles
+                                                                      fósiles."></a>
+
+    <!--Encabezado-->
+    <div id="top"><h1>Contaminación en el Valle de México</h1></div>
+
+
+
 
 </body>
 </html>
