@@ -1,0 +1,42 @@
+#movie > div { 
+	position: relative;
+	height: 80vh;
+	width: 0px;
+}
+
+#caption {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    height: 70%;
+    width: 40%;
+    font-size: 2em;
+    padding: 5%;
+    text-align: left;
+}
+
+#fixed {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 50%;
+}
+
+#fixed>div{
+    margin-top: 10%;
+    position :fixed;
+display:none;
+}
+
+
+#top {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 10%;
+	width: 100%;
+	background-color:lightgray;
+}
+
+
