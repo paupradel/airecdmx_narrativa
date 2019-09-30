@@ -7,10 +7,12 @@
     <meta name="author" content="pradel">
     <title>Pronosticar la calidad del aire en el Valle de México</title>
 
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
+
     <style>
         body {
             margin:0;
-            font-family: "Avenir Light";
+            font-family: "Quicksand", sans-serif;
             font-size: 15px;
             background-image: url("./resources/images/background.png");
             background-position: center center;
@@ -74,11 +76,48 @@
                                                                       altitudes disminuyen la eficiencia de los combustibles
                                                                       fósiles."></a>
 
-    <!--Encabezado-->
-    <div id="top"><h1>Contaminación en el Valle de México</h1></div>
+    <!--textos aqui se renderizaran no modificar-->
+    <div id="caption"></div>
 
+    <!--todas las secciones (MODIFICAR TODO DENTRO DE FIXED)-->
+    <div id="fixed">
+        <div id="contenido1">
+            aqui va todo el contenido de la primer seccion
+            <div style="height: 300px; width: 100px; background-color: black"></div>
+        </div>
+        <div id="contenido2">
+            aqui va todo el contenido de la segunda seccion
+            <div style="height: 230px; width: 300px; background-color: red"></div>
+        </div>
+        <div id="contenido3">
+            <div style="height: 400px; width: 150px; background-color: aqua"></div>
+        </div>
+        <div id="contenido4">
+            <div style="height: 150px; width: 200px; background-color:yellowgreen"></div>
+        </div>
+    </div>
 
+    <!--instrucciones para quitar mostrar (SEGUN LOS ELEMENTOS QUE HAY EN FIXED)-->
+    <a id="hide_not_c1" data-control_element="#fixed>[id!='contenido1']" data-element_hide></a>
 
+    <a id="show_c1" data-control_element="#fixed>#contenido1" data-element_show></a>
+    <a id="hide_not_c2" data-control_element="#fixed>[id!='contenido2']" data-element_hide></a>
+    <a id="show_c2" data-control_element="#fixed>#contenido2" data-element_show></a>
+    <a id="hide_not_c3" data-control_element="#fixed>[id!='contenido3']" data-element_hide></a>
+    <a id="show_c3" data-control_element="#fixed>#contenido3" data-element_show></a>
+    <a id="hide_not_c4" data-control_element="#fixed>[id!='contenido4']" data-element_hide></a>
+    <a id="show_c4" data-control_element="#fixed>#contenido4" data-element_show></a>
 
+    <!--Librerias necesarias-->
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="ant.js"></script>
+
+    <!--inicializar ant-->
+    <script>
+        $(document).ready(function(){
+            new Ant({})
+        })
+    </script>
 </body>
 </html>
