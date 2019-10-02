@@ -6,118 +6,66 @@
     <meta name="keywords" content="cdmx, contaminación, pronóstico, conacyt">
     <meta name="author" content="pradel">
     <title>Pronosticar la calidad del aire en el Valle de México</title>
-
     <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,600&display=swap&subset=latin-ext" rel="stylesheet">
-
-    <style>
-        body {
-            margin:0;
-            font-family: "Quicksand", sans-serif;
-            font-size: 15px;
-            background-image: url("./resources/images/background.png");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-size: cover;
-        }
-    </style>
-
     <link rel="stylesheet" href="./resources/css/index.css">
-
-    <title>Pronosticando la calidad del aire en el Valle de México</title>
 </head>
+
+<style>
+    body {
+        margin: 0;
+        font-family: "Quicksand", sans-serif;
+        font-size: 16px;
+        background-image: url("./resources/images/background.png");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+</style>
 <body>
-    <!--Definir diapositivas -->
-    <div id="movie" data-movie data-trigger_position="0.7">
-        <div id="movie_1" data-parse="#text_1, #show_c1, #hide_not_c1"></div>
-        <div id="movie_2" data-parse="#text_2, #show_c2, #hide_not_c2"></div>
-        <div id="movie_3" data-parse="#text_3, #show_c3, #hide_not_c3"></div>
-        <div id="movie_4" data-parse="#text_4, #show_c4, #hide_not_c4"></div>
-    </div>
 
-    <!--Definir los textos-->
-    <a id="text_1" data-control_element="#caption" data-element_text="La calidad del aire en el Valle de México es una
-                                                                      constante preocupación para la salud pública para
-                                                                      los habitantes y un reto para las autoridades. En
-                                                                      1992, fue declarada como la ciudad con el aire más
-                                                                      contaminado del planeta. Desde entonces, la
-                                                                      contaminación ha disminuido gradualmente, pero las
-                                                                      amenazas inminentes a la salud pública continúan
-                                                                      existiendo.
-                                                                      La Zona Metropolitana del Valle de México es una de
-                                                                      las urbes más grandes del planeta. En ella viven
-                                                                      cerca de 21 millón de personas, a 2,240 metros sobre
-                                                                      el nivel del mar, en una cuenca rodeada de sierras
-                                                                      y volcanes que alcanzan los 5,400 metros, en el
-                                                                      oriente (Popocatépetl e Iztaccíhuatl), sur y
-                                                                      poniente (Sierra de Ajusco-Chichinauhtzin)."></a>
-    <a id="text_2" data-control_element="#caption" data-element_text="Esta geografía particular actúa directamente como
-                                                                      una barrera para la liberación y circulación de los
-                                                                      vientos y la dispersión de los contaminantes. Se
-                                                                      calcula que en la Zona Metroolitana del Valle de
-                                                                      México, la población esta expuesta a un promedio
-                                                                      diario de 63μg/m3 de PM10, las cuales son partículas
-                                                                      sólidas menores a 10 picómetros en la forma de ceniza,
-                                                                      hollín, cemento o polen."></a>
-    <a id="text_3" data-control_element="#caption" data-element_text="La exposición a partículas menores a 2.5 picómetros,
-                                                                      PM2.5, incluso a niveles por debajo de las normas
-                                                                      internacionales y nacionales, se asocian con un
-                                                                      incremento en la incidencia de asma, severidad en el
-                                                                      deterioro de la función pulmonar, así como mayor
-                                                                      gravedad en la presentación de las enfermedades
-                                                                      respiratorias de niños y adolescentes (Romero et al.,
-                                                                      2006; Querol, 2008)."></a>
-    <a id="text_4" data-control_element="#caption" data-element_text="En la zona sur de la ciudad se puede llegar hasta
-                                                                      45μg/m3 de ozono, el cual es un contaminante que
-                                                                      se forma por reacciones fotoquímicas con contaminantes
-                                                                      primarios como los Óxidos de Nitrógeno (NOX) y los
-                                                                      componentes orgánicos volátiles. Estudios han
-                                                                      mostrado que los bajos niveles de oxígeno a grandes
-                                                                      altitudes disminuyen la eficiencia de los combustibles
-                                                                      fósiles."></a>
-
-    <!--textos aqui se renderizaran no modificar-->
-    <div id="caption"></div>
-
-    <!--todas las secciones (MODIFICAR TODO DENTRO DE FIXED)-->
-    <div id="fixed">
-        <div id="contenido1">
-            aqui va todo el contenido de la primer seccion
-            <div style="height: 300px; width: 100px; background-color: black"></div>
+    <! Definir textos -->
+    <section id="scrolly-dnt">
+        <div class="step" data-step="">
+            <h1>Contaminación en el Valle de México</h1>
+            <p>La calidad del aire en el Valle de México es una constante preocupación para la salud pública para
+                los habitantes y un reto para las autoridades. En 1992, fue declarada como la ciudad con el aire más
+                contaminado del planeta. Desde entonces, la contaminación ha disminuido gradualmente, pero las
+                amenazas inminentes a la salud pública continúan existiendo.</p>
+            <p>La Zona Metropolitana del Valle de México es una de las urbes más grandes del planeta. En ella viven
+                cerca de 21 millón de personas, a 2,240 metros sobre el nivel del mar, en una cuenca rodeada de sierras
+                y volcanes que alcanzan los 5,400 metros, en el oriente (Popocatépetl e Iztaccíhuatl), sur y
+                poniente (Sierra de Ajusco-Chichinauhtzin).</p>
         </div>
-        <div id="contenido2">
-            aqui va todo el contenido de la segunda seccion
-            <div style="height: 230px; width: 300px; background-color: red"></div>
-        </div>
-        <div id="contenido3">
-            <div style="height: 400px; width: 150px; background-color: aqua"></div>
-        </div>
-        <div id="contenido4">
-            <div style="height: 150px; width: 200px; background-color:yellowgreen"></div>
-        </div>
-    </div>
 
-    <!--instrucciones para quitar mostrar (SEGUN LOS ELEMENTOS QUE HAY EN FIXED)-->
-    <a id="hide_not_c1" data-control_element="#fixed>[id!='contenido1']" data-element_hide></a>
+        <div class="step" data-step="">
+            <p>Esta geografía particular actúa directamente como una barrera para la liberación y circulación de los
+                vientos y la dispersión de los contaminantes. Se calcula que en la Zona Metropolitana del Valle de
+                México, la población esta expuesta a un promedio diario de 63μg/m3 de PM10, las cuales son partículas
+                sólidas menores a 10 picómetros en la forma de ceniza, hollín, cemento o polen.</p>
+        </div>
 
-    <a id="show_c1" data-control_element="#fixed>#contenido1" data-element_show></a>
-    <a id="hide_not_c2" data-control_element="#fixed>[id!='contenido2']" data-element_hide></a>
-    <a id="show_c2" data-control_element="#fixed>#contenido2" data-element_show></a>
-    <a id="hide_not_c3" data-control_element="#fixed>[id!='contenido3']" data-element_hide></a>
-    <a id="show_c3" data-control_element="#fixed>#contenido3" data-element_show></a>
-    <a id="hide_not_c4" data-control_element="#fixed>[id!='contenido4']" data-element_hide></a>
-    <a id="show_c4" data-control_element="#fixed>#contenido4" data-element_show></a>
+        <div class="step" data-step="">
+            <p>La exposición a partículas menores a 2.5 picómetros, PM2.5, incluso a niveles por debajo de las normas
+                internacionales y nacionales, se asocian con un incremento en la incidencia de asma, severidad en el
+                deterioro de la función pulmonar, así como mayor gravedad en la presentación de las enfermedades
+                respiratorias de niños y adolescentes (Romero et al., 2006; Querol, 2008).</p>
+        </div>
+
+        <div class="step" data-step="">
+            <p>En la zona sur de la ciudad se puede llegar hasta 45μg/m3 de ozono, el cual es un contaminante que
+                se forma por reacciones fotoquímicas con contaminantes primarios como los Óxidos de Nitrógeno (NOX) y los
+                componentes orgánicos volátiles. Estudios han mostrado que los bajos niveles de oxígeno a grandes
+                altitudes disminuyen la eficiencia de los combustibles fósiles.</p>
+        </div>
+    </section>
 
     <!--Librerias necesarias-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
-    <script src="ant.js"></script>
-
-    <!--inicializar ant-->
-    <script>
-        $(document).ready(function(){
-            new Ant({})
-        })
-    </script>
-</body>
-</html>
+    <script src="https://unpkg.com/intersection-observer@2.0.0/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
