@@ -8,16 +8,7 @@
     width: 25%;
     height: 40%;
     padding-left: 5%;
-    padding-top: 5%;
-    background-color: transparent;
-}
-
-.step {
-    margin: 0;
-    font-family: "Quicksand", sans-serif;
-    font-size: 16px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+    padding-top: 0;
+    padding-bottom: 20%;
+    text-shadow: -2px 2px 3px white;
 }

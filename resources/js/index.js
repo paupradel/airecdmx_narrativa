@@ -2,8 +2,9 @@
 var scroller = scrollama();
 
 function handleStepEnter(response) {
-    response.element.style.opacity=1;
-    document.body.style.backgroundImage='url(data-step)';
+    response.element.style.opacity=1
+    let img_url=response.element.getAttribute("data-step")
+    document.body.style.backgroundImage='url('+img_url+'),url("resources/images/background_1.png")';
 }
 
 function handleStepExit(response) {
