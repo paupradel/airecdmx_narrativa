@@ -12,3 +12,17 @@
     padding-bottom: 5%;
     text-shadow: -2px 2px 3px white;
 }
+
+@keyframes moving-clouds {
+    0% {
+        background-image: url("/resources/images/background_9_1.png");
+    }
+    100% {
+        background-image: url("/resources/images/background_9_2.png");
+    }
+    /*40% {}*/
+    /*60% {}*/
+    /*80% {}*/
+    /*100% {}*/
+
+}
