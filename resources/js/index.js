@@ -54,6 +54,7 @@ function handleStepEnter(response) {
         let img_url = response.element.getAttribute("data-step");
         document.body.style.backgroundImage = 'url(' +img_url+ '),url("resources/images/background_1.png")';
         document.body.style.backgroundBlendMode = "multiply";
+        document.body.style.backgroundSize = "100% 100%";
     }
 }
 
