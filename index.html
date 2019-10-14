@@ -35,6 +35,22 @@
 
     /*Agregando animación en D3*/
 
+    .axis line {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+
+    .x.axis.path {
+        display: none;
+    }
+
+    .line {
+        fill: none;
+        stroke: steelblue;
+        stroke-width: 2px;
+    }
+
 </style>
 <body>
     <! Definir textos -->
@@ -93,14 +109,14 @@
                 como en el uso de productos domésticos: pinturas, perfumes, plaguicidas, lacas, entre otros.</p>
         </div>
 
-        <div class="step" data-step="resources/images/background_6.png">
+        <div id="viajes-metropoli" class="step" data-step="resources/images/background_6.png">
             <p>La población del Valle de México realiza 35 millones de viajes a la semana para transportarse, 36.6% duran hasta
                 media hora; el 58% tardan de 31 minutos hasta 2 horas, y en el 5.3% de los casos, emplean más de dos horas.</p>
             <p>Del total de viajes de los municipios conurbados, cerca de 2.25 millones (12.6%) se realizan hacia la CDMX. En tanto
                 que, del total de viajes de la CDMX, 2.16 millones (13.3%) se realizan hacia los municipios conurbados.</p>
         </div>
 
-        <div class="step" data-step="resources/images/background_6.png">
+        <div id="normativas" class="step" data-step="resources/images/background_6.png">
             <p>Ante normativas restrictivas de uso de vehículos privados, como el "hoy no circula", las personas buscan
                 alternativas como la compra de autos adicionales o el uso frecuente de servicios de taxi o servicios de
                 transporte por app. Esta respuesta limita la mitigación de la contingencia ambiental y por lo tanto se desvía de
@@ -152,7 +168,6 @@
                 convergiendo en la región central de la cuenca y acumulándose con los contaminantes emitidos durante la noche.</p>
         </div>
 
-<!--        <div id="impacto-salud-1" class="step" data-step="resources/images/background_10.png">-->
         <div id="impacto-salud-1" class="step" data-step="resources/images/background_10.png">
             <h2>Impacto en la salud</h2>
             <p>Los altos niveles de contaminantes en el aire pueden causar problemas de salud temporales como tos, resequedad,
@@ -161,7 +176,8 @@
         </div>
 
         <div id="impacto-salud-2" class="step" data-step="resources/images/background_11.png">
-            <img class="enfermedades" src="resources/images/graficas_11.png" alt="enfermedades respiratorias">
+            <div id="circulatorias" alt="enfermedades circulatorias"></div>
+            <div id="respiratorias" alt="enfermedades respiratorias"></div>
         </div>
 
         <div id="ccd" class="step">
@@ -175,11 +191,202 @@
 
     </section>
 
-    <!--Librerias necesarias-->
+    <!--Bibliotecas necesarias-->
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollama@0.6.1/build/scrollama.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
     <script src="./resources/js/index.js"></script>
+    <script src="https://d3js.org/d3.v3.js"></script>
 
+    <script>
+        var margin = {top: 0, right: 0, bottom: 100, left: 0},
+            width = window.innerWidth/5,
+            height = window.innerHeight/6;
+            // width = 3065 - margin.left - margin.right,
+            // height = 1844 - margin.top - margin.bottom;
+
+        var parseDate = d3.time.format("%Y-%m-%d").parse;
+
+        var x = d3.time.scale()
+            .range([0, width]);
+
+        var y = d3.scale.linear()
+            .range([height, 0]);
+
+        var color = d3.scale.category10();
+
+        var xAxis = d3.svg.axis()
+            .scale(x)
+            .tickValues([])
+            .tickSize(0)
+            .orient("bottom");
+
+        var yAxis = d3.svg.axis()
+            .scale(y)
+            .tickValues([])
+            .tickSize(0)
+            .orient("left");
+
+        var line = d3.svg.line()
+            .interpolate("basis")
+            .x(function(d) { return x(d.fecha); })
+            .y(function(d) { return y(d.enfermedad); });
+
+        var chart1 = d3.select("#circulatorias")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        var chart2 = d3.select("#respiratorias")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        /* Leer los datos en el csv*/
+        d3.csv("resources/data/muertes_anio.csv", function(error, data) {
+            color.domain(d3.keys(data[0]).filter(function(key) { return key !== "fecha"; }));
+
+            data.forEach(function(d) {
+                d.fecha = parseDate(d.fecha);
+            });
+
+            var enfermedades = color.domain().map(function(name) {
+                return {
+                    name: name,
+                    values: data.map(function(d) {
+                        return {fecha: d.fecha, enfermedad: +d[name]};
+                    })
+                };
+            });
+
+
+            x.domain(d3.extent(data, function(d) { return d.fecha; }));
+
+            y.domain([
+                d3.min(enfermedades, function(c) { return d3.min(c.values, function(v) { return v.enfermedad; }); }),
+                d3.max(enfermedades, function(c) { return d3.max(c.values, function(v) { return v.enfermedad; }); })
+            ]);
+
+            chart1.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis);
+
+            chart1.append("g")
+                .attr("class", "y axis")
+                .call(yAxis);
+
+            chart1.append("text")
+                .attr("class", "x label")
+                .attr("text-anchor", "end")
+                .attr("x", width)
+                .attr("y", height + 16)
+                .attr("font-size", 16)
+                .text("enfermedades circulatorias");
+
+            chart1.append("g")
+                .append("text")
+                .attr("y", height - 50)
+                .attr("x", width - 40)
+                .attr("font-size", 30)
+                .style("text-anchor", "end")
+                .text("22k");
+
+            chart2.append("g")
+                .attr("class", "x axis")
+                .attr("transform", "translate(0," + height + ")")
+                .call(xAxis);
+
+            chart2.append("g")
+                .attr("class", "y axis")
+                .call(yAxis);
+
+            chart2.append("text")
+                .attr("class", "x label")
+                .attr("text-anchor", "end")
+                .attr("x", width)
+                .attr("y", height + 16)
+                .attr("font-size", 16)
+                .text("enfermedades respiratorias")
+
+            chart2.append("g")
+                .append("text")
+                .attr("y", 30)
+                .attr("x", width - 40)
+                .attr("font-size", 30)
+                .style("text-anchor", "end")
+                .text("78k");
+
+            var enfermedad_tipo1 = chart1.selectAll(".enfermedad_tipo")
+                .data(enfermedades)
+                .enter().append("g")
+                .attr("class", "enfermedad_tipo");
+
+            var path1 = chart1.selectAll(".enfermedad_tipo").append("path")
+                .attr("class", "line")
+                .attr("d", function(d) { return line(d.values); })
+                .style("stroke", function(d) { if (d.name == "total_enfermedad_circulatorio")
+                {return "#000";}
+                else {return "rgba(255,255,255,0)";}
+                });
+
+            var enfermedad_tipo2 = chart2.selectAll(".enfermedad_tipo")
+                .data(enfermedades)
+                .enter().append("g")
+                .attr("class", "enfermedad_tipo");
+
+            var path2 = chart2.selectAll(".enfermedad_tipo").append("path")
+                .attr("class", "line")
+                .attr("d", function(d) { return line(d.values); })
+                .style("stroke", function(d) { if (d.name == "total_enfermedad_respiratorio")
+                {return "#000"}
+                else {return "rgba(255,255,255,0)";}
+                });
+
+
+            var totalLength1 = [path1[0][0].getTotalLength(), path1[0][1].getTotalLength()];
+            var totalLength2 = [path2[0][0].getTotalLength(), path2[0][1].getTotalLength()];
+
+            console.log(totalLength1);
+            console.log(totalLength2);
+
+            d3.select(path1[0][0])
+                .attr("stroke-dasharray", totalLength1[0] + " " + totalLength1[0] )
+                .attr("stroke-dashoffset", totalLength1[0])
+                .transition()
+                .duration(5000)
+                .ease("linear")
+                .attr("stroke-dashoffset", 0);
+
+            d3.select(path1[0][1])
+                .attr("stroke-dasharray", totalLength1[1] + " " + totalLength1[1] )
+                .attr("stroke-dashoffset", totalLength1[1])
+                .transition()
+                .duration(5000)
+                .ease("linear")
+                .attr("stroke-dashoffset", 0);
+
+            d3.select(path2[0][0])
+                .attr("stroke-dasharray", totalLength2[0] + " " + totalLength2[0] )
+                .attr("stroke-dashoffset", totalLength2[0])
+                .transition()
+                .duration(5000)
+                .ease("linear")
+                .attr("stroke-dashoffset", 0);
+
+            d3.select(path2[0][1])
+                .attr("stroke-dasharray", totalLength2[1] + " " + totalLength2[1] )
+                .attr("stroke-dashoffset", totalLength2[1])
+                .transition()
+                .duration(5000)
+                .ease("linear")
+                .attr("stroke-dashoffset", 0);
+
+        });
+    </script>
 </body>
 </html>
