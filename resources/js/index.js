@@ -199,7 +199,7 @@ function drawLines(){
             .attr("stroke-dasharray", totalLength1[0] + " " + totalLength1[0] )
             .attr("stroke-dashoffset", totalLength1[0])
             .transition()
-            .duration(5000)
+            .duration(12000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
 
@@ -207,7 +207,7 @@ function drawLines(){
             .attr("stroke-dasharray", totalLength1[1] + " " + totalLength1[1] )
             .attr("stroke-dashoffset", totalLength1[1])
             .transition()
-            .duration(5000)
+            .duration(12000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
 
@@ -215,7 +215,7 @@ function drawLines(){
             .attr("stroke-dasharray", totalLength2[0] + " " + totalLength2[0] )
             .attr("stroke-dashoffset", totalLength2[0])
             .transition()
-            .duration(5000)
+            .duration(12000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
 
@@ -223,7 +223,7 @@ function drawLines(){
             .attr("stroke-dasharray", totalLength2[1] + " " + totalLength2[1] )
             .attr("stroke-dashoffset", totalLength2[1])
             .transition()
-            .duration(5000)
+            .duration(12000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
     });
