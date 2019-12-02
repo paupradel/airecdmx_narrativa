@@ -12,44 +12,55 @@
 </head>
 
 <style>
-    body {
-        margin: 0;
-        font-family: "Quicksand", sans-serif;
-        font-size: 16px;
-        background-image: url("resources/images/background_1.png");
-        background-position: right bottom;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-    }
+    /*body {*/
+    /*    margin: 0;*/
+    /*    font-family: "Quicksand", sans-serif;*/
+    /*    font-size: 16px;*/
+    /*    background-image: url("resources/images/background_1.png");*/
+    /*    background-position: right bottom;*/
+    /*    background-repeat: no-repeat;*/
+    /*    background-attachment: fixed;*/
+    /*    background-size: 100% 100%;*/
+    /*}*/
 
-    h1 {
-        font-size: 25px;
-    }
+    /*h1 {*/
+    /*    font-size: 25px;*/
+    /*}*/
 
-    img {
-        padding-top: 10%;
-        position: relative;
-        width: 110%;
-    }
+    /*h4 {*/
+    /*    color: white;*/
+    /*    text-align: center;*/
+    /*    margin-bottom: -20px;*/
+    /*    margin-top: 20px;*/
+    /*}*/
 
-    /*Agregando animación en D3*/
+    /*h3 {*/
+    /*    text-align: justify-all;*/
+    /*}*/
 
-    .axis line {
-        fill: none;
-        stroke: #000;
-        shape-rendering: crispEdges;
-    }
+    /*img {*/
+    /*    padding-top: 10%;*/
+    /*    position: relative;*/
+    /*    width: 110%;*/
+    /*}*/
 
-    .x.axis.path {
-        display: none;
-    }
+    /*!*Agregando animación en D3*!*/
 
-    .line {
-        fill: none;
-        stroke: steelblue;
-        stroke-width: 2px;
-    }
+    /*.axis line {*/
+    /*    fill: none;*/
+    /*    stroke: #000;*/
+    /*    shape-rendering: crispEdges;*/
+    /*}*/
+
+    /*.x.axis.path {*/
+    /*    display: none;*/
+    /*}*/
+
+    /*.line {*/
+    /*    fill: none;*/
+    /*    stroke: steelblue;*/
+    /*    stroke-width: 2px;*/
+    /*}*/
 
 </style>
 <body>
@@ -212,29 +223,67 @@
             embarazadas y las personas con enfermedades respiratorias y cardiovasculares. Un estudio mostró que la
             contaminación del aire <a href="https://www.thejournal.ie/health-effects-institute-report-air-pollution-4574216-Apr2019/"
             target="blank" rel="noopener noreferer">acortará la esperanza de vida de los niños en un promedio de 20
-                meses</a> y es causa de muertes fetales.</p>
+                    meses</a> y es causa de muertes fetales.
+                <br></br>
+                <br></br>
+                <br></br>
+                <br></br>
+            </p>
         </div>
 
-        <div class="step">
-            <h2>Exposición promedio de la contaminación en exteriores</h2>
-            <p>La relación entre la geografía particular, la meteorología y la vibrante actividad urbana del Valle de
-            México genera patrones que definen los niveles de contaminación en distintos periodos temporales. En base a
-            datos históricos, la contaminacion que respiramos cambia dependiendo de la hora y el mes del año. Los
-            niveles de ozono aumentan considerablemente de febrero a junio (temporada de ozono).</p>
-
-<!--            graficos-->
-
-            <p>Este tipo de patrones temporales son la clave para visualizar y analiza la relación que guardan los
-                contaminantes con las variables naturales y antropogénicas. Los datos de las condiciones atmosféricas
-                emitidas por
-                <a href="http://www.aire.cdmx.gob.mx/default.php" target="blank" rel="noopener noreferrer">
-                    el sistema de monitoreo atmosférico</a>, permitieron el desarrollo de un
-            <strong><a href="http://contaminantes.ccd.conacyt.mx/" target="blank" rel="noopner noreferrer">modelo de pronóstico
-                de ozono, PM10 y PM2.5</a> que predice en tiempo real los niveles de contaminación de las siguientes 24
-            horas de una manera fiable y accesible para autoridades y público general.</strong></p>
+        <div id="graficas-hora" class="step-graficas" data-step-12="resources/images/background_1.png">
+            <div class="grid-container">
+                <div class="grid-item-1">
+                    <br></br>
+                    <br></br>
+                    <h2>Exposición promedio de la contaminación en exteriores</h2>
+                    <p>La relación entre la geografía particular, la meteorología y la vibrante actividad urbana del Valle de
+                        México genera patrones que definen los niveles de contaminación en distintos periodos temporales. En base a
+                        datos históricos, la contaminacion que respiramos cambia dependiendo de la hora y el mes del año. Los
+                        niveles de ozono aumentan considerablemente de febrero a junio (temporada de ozono).</p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                </div>
+                <div class="radarChartHora" id="grafica-horaria">
+                    <h4>Concentración promedio por hora</h4>
+                </div>
+            </div>
         </div>
 
-        <div class="step">
+        <div id="graficas-mensual" class="step-graficas" data-step-13="resources/images/background_1.png">
+            <div class="grid-container">
+                <div class="grid-item-1">
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <p>Este tipo de patrones temporales son la clave para visualizar y analiza la relación que guardan los
+                        contaminantes con las variables naturales y antropogénicas. Los datos de las condiciones atmosféricas
+                        emitidas por
+                        <a href="http://www.aire.cdmx.gob.mx/default.php" target="blank" rel="noopener noreferrer">
+                            el sistema de monitoreo atmosférico</a>, permitieron el desarrollo de un
+                        <strong><a href="http://contaminantes.ccd.conacyt.mx/" target="blank" rel="noopner noreferrer">modelo de pronóstico
+                            de ozono, PM10 y PM2.5</a> que predice en tiempo real los niveles de contaminación de las siguientes 24
+                            horas de una manera fiable y accesible para autoridades y público general.</strong></p>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                </div>
+                <div class="radarChartMes" id="grafica-mensual">
+                    <h4>Concentración promedio mensual</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="step-conclusion">
             <p>El riesgo para la salud a consecuencia de la contaminación ha llevado a la necesidad de implementar
             acciones inmediatas. Derivando de la declaración de contigencia ambiental atmosférica, se activan programas
             de restricción de la circulación de vehículos y se exigen actividades de mantenimiento para industrias con
@@ -244,35 +293,156 @@
             de un pensamiento interdisciplinario que busque entender y solucionar el problema de raíz.</p>
             <p>El uso de un modelo que pronostica la contaminación, permiete analizar de manera más fina la relación de
             la misma con sus fuentes, y por tanto apoya a los expertos en proporcionar recomendaciones u orientaciones
-            para políticas urbano-ambientales.</p>
+            para políticas urbano-ambientales</p>
         </div>
 
-        <div class="step">
+        <div class="step-conclusion">
             <h3>A partir de estrategias de política pública y los esfuerzos de expertos en todos los campos se pueden
-            desarrollar soluciones a largo plazo que continúen mejorando la calidad dela ire, por ejemplo se
+            desarrollar soluciones a largo plazo que continúen mejorando la calidad del aire, por ejemplo se
             <a href="http://www.data.sedema.cdmx.gob.mx/beneficios-en-salud-por-la-mejora-de-la-calidad-del-aire/descargas/analisis-espanol.pdf"
             target="blank" rel="noopener noreferrer"> permitió evitar 20 mil muertes prematuras entre 1990 y 2014</a>.
             Mejorar las condiciones del área metropolitana como la del Valle de México requiere un enfoque a largo plazo,
-            es evidente que existe y es importante la posibilidad de controlar als emisiones de los contaminantes en la
+            es evidente que existe y es importante la posibilidad de controlar las emisiones de los contaminantes en la
             metrópoli.</h3>
         </div>
 
         <div id="ccd" class="step">
-            <h3>CONACyT -2019</h3>
+            <h3>CONACyT</h3>
             <h3>Coordinación de Ciencias de Datos</h3>
-            <h4>Daniel Bustillos</h4>
-            <h4>Michelle Mandoki</h4>
-            <h4>Celine Jacquin</h4>
-            <h4>Paulina Pradel</h4>
+            <h3>Daniel Bustillos</h3>
+            <h3>Michelle Mandoki</h3>
+            <h3>Celine Jacquin</h3>
+            <h3>Paulina Pradel</h3>
         </div>
-
     </section>
 
     <!--Bibliotecas necesarias-->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha384-rY/jv8mMhqDabXSo+UCggqKtdmBfd3qC2/KvyTDNQ6PcUJXaxK1tMepoQda4g5vB"
+            crossorigin="anonymous"></script>
     <script src="https://unpkg.com/scrollama@0.6.1/build/scrollama.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
-    <script src="./resources/js/index.js"></script>
     <script src="https://d3js.org/d3.v3.js"></script>
+    <script src="./libraries/radarChart.js"></script>
+    <script src="./resources/js/index.js"></script>
+    <script>
+        var margin = {top: 100, right: 100, bottom: 100, left: 100},
+            width = Math.min(700, window.innerWidth - 10) - margin.left - margin.right,
+            height = Math.min(width, window.innerHeight - margin.top - margin.bottom - 20);
+
+        var data_hora = [
+            [//PM10
+                {axis:"0",value:20},
+                {axis:"1",value:18},
+                {axis:"2",value:17},
+                {axis:"3",value:15},
+                {axis:"4",value:10},
+                {axis:"5",value:8},
+                {axis:"6",value:11},
+                {axis:"7",value:13},
+                {axis:"8",value:21},
+                {axis:"9",value:23},
+                {axis:"10",value:40},
+                {axis:"11",value:42},
+                {axis:"12",value:45},
+                {axis:"13",value:51},
+                {axis:"14",value:59},
+                {axis:"15",value:70},
+                {axis:"16",value:64},
+                {axis:"17",value:43},
+                {axis:"18",value:36},
+                {axis:"19",value:29},
+                {axis:"20",value:25},
+                {axis:"21",value:19},
+                {axis:"22",value:17},
+                {axis:"23",value:15}
+            ],[//O3
+                {axis:"0",value:35},
+                {axis:"1",value:31},
+                {axis:"2",value:32},
+                {axis:"3",value:36},
+                {axis:"4",value:39},
+                {axis:"5",value:40},
+                {axis:"6",value:42},
+                {axis:"7",value:45},
+                {axis:"8",value:48},
+                {axis:"9",value:55},
+                {axis:"10",value:62},
+                {axis:"11",value:60},
+                {axis:"12",value:59},
+                {axis:"13",value:51},
+                {axis:"14",value:49},
+                {axis:"15",value:49},
+                {axis:"16",value:50},
+                {axis:"17",value:52},
+                {axis:"18",value:54},
+                {axis:"19",value:51},
+                {axis:"20",value:45},
+                {axis:"21",value:41},
+                {axis:"22",value:39},
+                {axis:"23",value:37}
+            ]
+        ];
+
+        var data_mes = [
+            [//PM10
+                {axis:"Enero",value:51},
+                {axis:"Febrero",value:56},
+                {axis:"Marzo",value:49},
+                {axis:"Abril",value:52},
+                {axis:"Mayo",value:50},
+                {axis:"Junio",value:30},
+                {axis:"Julio",value:35},
+                {axis:"Agosto",value:29},
+                {axis:"Septiembre",value:31},
+                {axis:"Octubre",value:30},
+                {axis:"Noviembre",value:45},
+                {axis:"Diciembre",value:57}
+            ],[//O3
+                {axis:"Enero",value:26},
+                {axis:"Febrero",value:33},
+                {axis:"Marzo",value:34},
+                {axis:"Abril",value:40},
+                {axis:"Mayo",value:43},
+                {axis:"Junio",value:33},
+                {axis:"Julio",value:24},
+                {axis:"Agosto",value:22},
+                {axis:"Septiembre",value:20},
+                {axis:"Octubre",value:21},
+                {axis:"Noviembre",value:24},
+                {axis:"Diciembre",value:23}
+            ]
+        ];
+
+        var color_dia = d3.scale.ordinal()
+            .range(["#0000cc","#9900cc"]);
+
+        var radarChartOptions_hora = {
+            w: width,
+            h: height,
+            margin: margin,
+            maxValue: 50,
+            labelFactor: 1.1,
+            levels: 5,
+            roundStrokes: true,
+            color: color_dia
+        };
+
+        var radarChartOptions_mes = {
+            w: width,
+            h: height,
+            margin: margin,
+            maxValue: 50,
+            labelFactor: 1.1,
+            levels: 5,
+            roundStrokes: true,
+            color: color_dia
+        };
+
+        //Call function to draw the Radar chart
+        RadarChart(".radarChartHora", data_hora, radarChartOptions_hora);
+        RadarChart(".radarChartMes", data_mes, radarChartOptions_mes);
+    </script>
+
 </body>
 </html>

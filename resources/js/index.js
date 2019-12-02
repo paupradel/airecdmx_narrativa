@@ -1,5 +1,7 @@
 
+// Scrolling de narrativa
 var scroller = scrollama();
+var scroller2 = scrollama();
 
 function handleStepEnter(response) {
     response.element.style.opacity=1;
@@ -30,6 +32,20 @@ function handleStepEnter(response) {
         }
     }
 
+    else if (response.element.getAttribute("data-step-12")){
+        let img_url = response.element.getAttribute("data-step-12");
+        document.body.style.backgroundImage = 'url("resources/images/background_1.png")';
+        document.body.style.backgroundBlendMode = "multiply";
+        document.body.style.backgroundSize = "100% 100%";
+    }
+
+    else if (response.element.getAttribute("data-step-13")){
+        let img_url = response.element.getAttribute("data-step-13");
+        document.body.style.backgroundImage = 'ulr("resources/images_background_1.png)';
+        document.body.style.backgroundBlendMode = "multiply";
+        document.body.style.backgroundSize = "100% 100%";
+    }
+
     else {
         let img_url = response.element.getAttribute("data-step");
         document.body.style.backgroundImage = 'url(' +img_url+ '),url("resources/images/background_1.png")';
@@ -42,6 +58,7 @@ function handleStepExit(response) {
     response.element.style.opacity=0.4;
 }
 
+// Animación de gráficas de líneas (enfermedades circulatorias y respiratorias)
 function drawLines(){
     var margin = {top: 0, right: 0, bottom: 100, left: 0},
         width = window.innerWidth/5,
@@ -233,6 +250,15 @@ function drawLines(){
 scroller
     .setup({
         step: ".step",
+        // debug: true,
+        offset: 0.5,
+    })
+    .onStepEnter(handleStepEnter)
+    .onStepExit(handleStepExit);
+
+scroller2
+    .setup({
+        step: ".step-graficas",
         // debug: true,
         offset: 0.5,
     })
