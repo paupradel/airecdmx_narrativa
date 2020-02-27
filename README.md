@@ -19,8 +19,6 @@ los colaboradores.
 
 ##### Versión: 1.0
 
-- url interno de la narrativa: http://172.25.13.10:8001 
-
 - Algunas gráficas y animaciones están hechas usando D3 (estacionalidad de la 
 concentración de los contaminantes y enfermedades respiratorias y circulatorias). En 
 la sección de requerimientos se especifica que bibliotecas de javascript son necesarias.
