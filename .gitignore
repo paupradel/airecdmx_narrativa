@@ -1,4 +1,10 @@
 /airecdmx_narrativa/resources/data/
 /airecdmx_narrativa/resources/data/muertes_anio.csv
 /airecdmx_narrativa/images/
+/airecdmx_narratva/resources/js/radar_index.html
+/airecdmx_narratva/js/radar_index.html
+/airecdmx_narrativa/data_promedios/data/
+.ipynb_checkpoints
 .idea
+.git
+
