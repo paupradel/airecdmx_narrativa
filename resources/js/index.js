@@ -216,7 +216,7 @@ function drawLines(){
             .attr("stroke-dasharray", totalLength1[0] + " " + totalLength1[0] )
             .attr("stroke-dashoffset", totalLength1[0])
             .transition()
-            .duration(12000)
+            .duration(15000)
             .ease("linear")
             .attr("stroke-dashoffset", 0);
 

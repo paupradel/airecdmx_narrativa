@@ -30,6 +30,27 @@ img {
     width: 110%;
 }
 
+a {
+    color: black;
+}
+
+a:visited {
+    color: #4B0082;
+}
+
+a:hover, a:active, a:focus {
+    color: #663399;
+}
+
+.logo-container img {
+    width: 60%;
+    height: auto;
+}
+
+.movilidad-container img {
+    width: 150%;
+    height: auto;
+}
 /*Agregando animación en D3*/
 
 .axis line {
