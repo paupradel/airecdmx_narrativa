@@ -7,6 +7,9 @@ body {
     background-position: right bottom;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
 }
 
 h1 {
