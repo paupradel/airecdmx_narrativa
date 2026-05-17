@@ -24,7 +24,7 @@ function handleStepEnter(response) {
 
     else if (response.element.getAttribute("data-step-11")){
         let img_url = response.element.getAttribute("data-step-11");
-        document.body.style.backgroundImage = 'url(' + img_url + '),url("resources/images/background_1.png")';
+        document.body.style.backgroundImage = 'url(' + img_url + '), url("resources/images/background_1.png")';
         document.body.style.backgroundBlendMode = "multiply";
         document.body.style.backgroundSize = "100% 100%";
         if (! document.querySelectorAll("#circulatorias > svg").length >= 1) {
@@ -32,23 +32,15 @@ function handleStepEnter(response) {
         }
     }
 
-    else if (response.element.getAttribute("data-step-12")){
-        let img_url = response.element.getAttribute("data-step-12");
-        document.body.style.backgroundImage = 'url("resources/images/background_1.png")';
-        document.body.style.backgroundBlendMode = "multiply";
-        document.body.style.backgroundSize = "100% 100%";
-    }
-
-    else if (response.element.getAttribute("data-step-13")){
-        let img_url = response.element.getAttribute("data-step-13");
-        document.body.style.backgroundImage = 'ulr("resources/images_background_1.png)';
-        document.body.style.backgroundBlendMode = "multiply";
-        document.body.style.backgroundSize = "100% 100%";
-    }
-
     else {
         let img_url = response.element.getAttribute("data-step");
-        document.body.style.backgroundImage = 'url(' +img_url+ '),url("resources/images/background_1.png")';
+        // console.log('imagen data-step: '+img_url)
+        if(img_url) {
+            document.body.style.backgroundImage = 'url(' +img_url+ '), url("resources/images/background_1.png")';
+        } else  {
+            document.body.style.backgroundImage = 'url("resources/images/background_1.png")';
+        }
+        
         document.body.style.backgroundBlendMode = "multiply";
         document.body.style.backgroundSize = "100% 100%";
     }
@@ -208,9 +200,10 @@ function drawLines(){
 
         var totalLength1 = [path1[0][0].getTotalLength(), path1[0][1].getTotalLength()];
         var totalLength2 = [path2[0][0].getTotalLength(), path2[0][1].getTotalLength()];
-
-        console.log(totalLength1);
-        console.log(totalLength2);
+        
+        // data
+        // console.log(totalLength1);
+        // console.log(totalLength2);
 
         d3.select(path1[0][0])
             .attr("stroke-dasharray", totalLength1[0] + " " + totalLength1[0] )
