@@ -238,10 +238,12 @@ function RadarChart(id, data, options) {
         .style("opacity", 0);
 
     // Handmade legend and title
-    svg.append("circle").attr("cx",620).attr("cy",130).attr("r", 6).style("fill", "#0000cc")
-    svg.append("circle").attr("cx",620).attr("cy",160).attr("r", 6).style("fill", "#9900cc")
+    svg.append("circle").attr("cx", 620).attr("cy",122).attr("r", 6).style("fill", "#2166ac")
+    svg.append("circle").attr("cx", 620).attr("cy",153).attr("r", 6).style("fill", "#9900cc")
+    svg.append("circle").attr("cx", 620).attr("cy",184).attr("r", 6).style("fill", "#5ab4ac")
     svg.append("text").attr("x", 640).attr("y", 130).text("PM10").style("font-size", "18px").style("fill", "white").style("font-weight", "bold").attr("alignment-baseline","middle")
     svg.append("text").attr("x", 640).attr("y", 160).text("O3").style("font-size", "18px").style("fill", "white").style("font-weight", "bold").attr("alignment-baseline","middle")
+    svg.append("text").attr("x", 640).attr("y", 190).text("PM2.5").style("font-size", "18px").style("fill", "white").style("font-weight", "bold").attr("alignment-baseline","middle")
 
     /////////////////////////////////////////////////////////
     /////////////////// Helper Function /////////////////////
