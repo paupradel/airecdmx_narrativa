@@ -49,7 +49,7 @@ Se da un listado de las bibliotecas usadas.
 
 ## Visualización en local
 
-Para visualizar correctamente las gráficas se requiere levantar un servidor local
+Para visualizar correctamente las gráficas se requiere levantar un servidor local.
 
 ```python
 python3 -m http.server 8000
